@@ -17,10 +17,11 @@
     "baseUrl": "./src",
     "jsx": "react-jsx",
     "paths": {
-      "@components": ["./components/index.js"],
-      "@hooks": ["./hooks/index.js"],
+      "@components": ["./components/index.ts"],
+      "@hooks/*": ["./hooks/*"],
       "@assets/*": ["./assets/*"],
       "@interfaces/*": ["./interfaces/*"],
+      "@constants/*": ["./constants/*"],
     }
   },
   "include": ["./src"],
