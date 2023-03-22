@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #393E46;
+  --contrast-color: #F7F7F7;
+  --secondary-color: #6D9886;
+  --detail-color: #F2E7D5;
+
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--contrast-color);
+  background-color: var(--primary-color);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --contrast-color: #213547;
+    --primary-color: #FFF;
+  }  
+}
