@@ -7,7 +7,7 @@ interface SelectPagesProps {
 export function SelectPages({ handleSelect }: SelectPagesProps ) {
   return(
     <div className='select-container'>
-      <label htmlFor='postsPerPage'>Posts por página</label>
+      <label htmlFor='postsPerPage'>Posts per page</label>
       <select
         name='postsPerPage'
         id='postsPerPage'
