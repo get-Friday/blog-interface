@@ -1,4 +1,4 @@
-import { BlogPost } from '@components';
+import { BlogPost, Header } from '@components';
 import { useRequest } from '@hooks/useRequest';
 import { POSTS_URL } from '@constants/POSTS_URL';
 import type { IBlogPost } from '@interfaces/IBlogPost';
@@ -18,15 +18,18 @@ function App() {
   }
 
   return (
-    <main>
-      <div className="posts-container">
-        {getAllPostRequest.response?.map((post: IBlogPost) => (
-          <BlogPost title={post.title} userId={post.userId} key={post.id}>
-            {post.body}
-          </BlogPost>
-        ))}
-      </div>
-    </main>
+    <div>
+      <Header />
+      <main>
+        <div className="posts-container">
+          {getAllPostRequest.response?.map((post: IBlogPost) => (
+            <BlogPost title={post.title} userId={post.userId} key={post.id}>
+              {post.body}
+            </BlogPost>
+          ))}
+        </div>
+      </main>
+    </div>
   );
 }
 
