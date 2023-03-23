@@ -40,15 +40,18 @@ function App() {
       <Header />
       <main>
         <div className='posts-container'>
-          <div className="select-container">
-            <label htmlFor="postsPerPage">
-              Posts por página
-            </label>
-            <select name="postsPerPage" id="postsPerPage" onChange={handleSelect} defaultValue='10'>
-              <option value="4">4</option>
-              <option value="10">10</option>
-              <option value="16">16</option>
-              <option value="24">24</option>
+          <div className='select-container'>
+            <label htmlFor='postsPerPage'>Posts por página</label>
+            <select
+              name='postsPerPage'
+              id='postsPerPage'
+              onChange={handleSelect}
+              defaultValue='10'
+            >
+              <option value='4'>4</option>
+              <option value='10'>10</option>
+              <option value='16'>16</option>
+              <option value='24'>24</option>
             </select>
           </div>
           {currentPosts?.map((post: IBlogPost) => (

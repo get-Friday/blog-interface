@@ -21,12 +21,13 @@ export function Paginate({ postPerPage, totalPosts, paginate }: paginateProps) {
     <div className='pagination-container'>
       <ul className='pagination'>
         {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className='page-number'
-          >
-            <button onClick={() => { paginate(number); }}>
-            {number}
+          <li key={number} className='page-number'>
+            <button
+              onClick={() => {
+                paginate(number);
+              }}
+            >
+              {number}
             </button>
           </li>
         ))}
