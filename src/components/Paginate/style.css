@@ -19,6 +19,11 @@
   user-select: none;
 }
 
+.small {
+  padding: 4px;
+  margin: 0 8px;
+}
+
 .page-number:hover {
   background-color: var(--secondary-color);
   color: #FFF;
