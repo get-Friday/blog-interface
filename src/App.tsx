@@ -21,7 +21,7 @@ function App() {
     <div>
       <Header />
       <main>
-        <div className="posts-container">
+        <div className='posts-container'>
           {getAllPostRequest.response?.map((post: IBlogPost) => (
             <BlogPost title={post.title} userId={post.userId} key={post.id}>
               {post.body}

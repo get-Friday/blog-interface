@@ -15,9 +15,12 @@ export function BlogPost(props: postProp) {
   return (
     <div className='post-container'>
       <h1>{props.title}</h1>
-      <h3>Post made by {getUser.isLoading ? 'loading' : getUser.response?.username}</h3>
+      <h3>
+        Post made by{' '}
+        {getUser.isLoading ? 'loading' : getUser.response?.username}
+      </h3>
       <p>{props.children}</p>
-      <div className="read-more">READ MORE</div>
+      <div className='read-more'>READ MORE</div>
     </div>
   );
 }
