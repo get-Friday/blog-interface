@@ -11,14 +11,6 @@ main {
   grid-template-columns: repeat(2, 30%);
 }
 
-.select-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  grid-column-start: 2;
-}
-
 #postsPerPage {
   margin-left: 1rem;
   padding: 5px;

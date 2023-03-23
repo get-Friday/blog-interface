@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BlogPost, Header, Paginate } from '@components';
+import { BlogPost, Header, Paginate, SelectPages } from '@components';
 import { useRequest } from '@hooks/useRequest';
 import { POSTS_URL } from '@constants/POSTS_URL';
 import type { IBlogPost } from '@interfaces/IBlogPost';
@@ -40,20 +40,7 @@ function App() {
       <Header />
       <main>
         <div className='posts-container'>
-          <div className='select-container'>
-            <label htmlFor='postsPerPage'>Posts por página</label>
-            <select
-              name='postsPerPage'
-              id='postsPerPage'
-              onChange={handleSelect}
-              defaultValue='10'
-            >
-              <option value='4'>4</option>
-              <option value='10'>10</option>
-              <option value='16'>16</option>
-              <option value='24'>24</option>
-            </select>
-          </div>
+          <SelectPages handleSelect={handleSelect} />
           {currentPosts?.map((post: IBlogPost) => (
             <BlogPost title={post.title} userId={post.userId} key={post.id}>
               {post.body}
