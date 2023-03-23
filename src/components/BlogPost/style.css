@@ -1,0 +1,21 @@
+.post-container {
+  position: relative;
+  background-color: var(--contrast-color);
+  color: #000;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-container h1 {
+  /* This guarantees that the h1 will have a minimun, maximum and will be responsive to user page zoom */
+  font-size: clamp(2rem, 1.5vw + 1rem ,4rem);
+}
+
+.read-more {
+  font-weight: 600;
+  position: absolute;
+  overflow-wrap: normal;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
