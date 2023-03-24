@@ -1,7 +1,7 @@
 .post-container {
   position: relative;
   background-color: var(--contrast-color);
-  color: #000;
+  color: var(--contrast-text);
   padding: 1rem 1.5rem;
   margin-bottom: 0.5rem;
 }
