@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BlogPost, Header, Paginate, SelectPages } from '@components';
+import { BlogPost, Header, Paginate, SelectPages, Footer, Welcome } from '@components';
 import { useRequest } from '@hooks/useRequest';
 import { POSTS_URL } from '@constants/POSTS_URL';
 import type { IBlogPost } from '@interfaces/IBlogPost';
@@ -39,6 +39,7 @@ function App() {
     <div>
       <Header />
       <main>
+        <Welcome />
         <div className='posts-container'>
           <SelectPages handleSelect={handleSelect} />
           {currentPosts?.map((post: IBlogPost) => (
@@ -53,6 +54,7 @@ function App() {
           />
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
