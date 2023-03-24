@@ -2,8 +2,7 @@
   position: relative;
   background-color: var(--contrast-color);
   color: var(--contrast-text);
-  padding: 1rem 1.5rem;
-  margin-bottom: 0.5rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
 }
 
 .post-container h1 {
@@ -13,9 +12,21 @@
 
 .read-more {
   font-weight: 600;
-  position: absolute;
   overflow-wrap: normal;
-  bottom: 0.5rem;
-  right: 0.5rem;
   cursor: pointer;
+}
+
+.post-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: baseline;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.post-footer p {
+  font-size: smaller;
+  opacity: 0.8;
 }
