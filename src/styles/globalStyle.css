@@ -1,4 +1,5 @@
 :root {
+  --contrast-text: #000;
   --primary-color: #393E46;
   --contrast-color: #F7F7F7;
   --secondary-color: #6D9886;
@@ -20,6 +21,7 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --contrast-text: #FFF;
     --contrast-color: #213547;
     --primary-color: #FFF;
   }  
