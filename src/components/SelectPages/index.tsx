@@ -4,8 +4,8 @@ interface SelectPagesProps {
   handleSelect: (selectPage: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export function SelectPages({ handleSelect }: SelectPagesProps ) {
-  return(
+export function SelectPages({ handleSelect }: SelectPagesProps) {
+  return (
     <div className='select-container'>
       <label htmlFor='postsPerPage'>Posts per page</label>
       <select
@@ -20,5 +20,5 @@ export function SelectPages({ handleSelect }: SelectPagesProps ) {
         <option value='24'>24</option>
       </select>
     </div>
-  )
+  );
 }
