@@ -26,3 +26,9 @@ body {
     --primary-color: #FFF;
   }  
 }
+
+/* Z-indexes:
+  header = 1
+  overlay-shadow = 2
+  modal-container = 3
+*/
