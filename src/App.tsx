@@ -1,16 +1,24 @@
 import { useState } from 'react';
-import { BlogPost, Header, Paginate, SelectPages, Footer, Welcome } from '@components';
+import {
+  BlogPost,
+  Header,
+  Paginate,
+  SelectPages,
+  Footer,
+  Welcome,
+  Modal,
+} from '@components';
 import { useRequest } from '@hooks/useRequest';
 import { POSTS_URL } from '@constants/POSTS_URL';
 import type { IBlogPost } from '@interfaces/IBlogPost';
 import './styles/app.css';
 
-type GET_BLOG_RESPONSE = IBlogPost;
-
 function App() {
-  const getAllPostRequest = useRequest<GET_BLOG_RESPONSE[]>(POSTS_URL);
+  const getAllPostRequest = useRequest<IBlogPost[]>(POSTS_URL);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [postPerPage, setPostPerPage] = useState<number>(10);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [currentPostModal, setCurrentPostModal] = useState<IBlogPost>();
 
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -27,6 +35,14 @@ function App() {
     setPostPerPage(Number(selectPage.target.value));
   }
 
+  function handleModalVisibility(visible: boolean, blogData?: IBlogPost) {
+    setIsModalOpen(visible);
+
+    if (blogData === undefined) return;
+
+    setCurrentPostModal(blogData);
+  }
+
   if (getAllPostRequest.isLoading) {
     return <main>Loading</main>;
   }
@@ -36,14 +52,28 @@ function App() {
   }
 
   return (
-    <div>
+    <>
+      <Modal
+        open={isModalOpen}
+        handleClose={() => {
+          handleModalVisibility(false);
+        }}
+        postData={currentPostModal}
+      />
       <Header />
       <main>
         <Welcome />
         <div className='posts-container'>
           <SelectPages handleSelect={handleSelect} />
           {currentPosts?.map((post: IBlogPost) => (
-            <BlogPost title={post.title} userId={post.userId} key={post.id}>
+            <BlogPost
+              title={post.title}
+              userId={post.userId}
+              key={post.id}
+              handleModalOpen={() => {
+                handleModalVisibility(true, post);
+              }}
+            >
               {post.body}
             </BlogPost>
           ))}
@@ -55,7 +85,7 @@ function App() {
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
