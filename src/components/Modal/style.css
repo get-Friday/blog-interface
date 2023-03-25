@@ -1,0 +1,57 @@
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--contrast-color);
+  color: var(--contrast-text);
+  padding: 50px;
+  z-index: 3;
+  overflow-y: auto;
+  max-height: calc(100vh - 210px);
+  width: 50%;
+}
+
+.overlay-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 2;
+}
+
+.all-comments-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  margin-top: 3rem;
+}
+
+.comment-container {
+  padding: 12px;
+  margin-bottom: 0.5rem;
+  border: 1px rgba(0, 0, 0, .2) solid;
+  border-radius: 5px;
+}
+
+.comments-name {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  color: var(--secondary-color);
+}
+
+.comments-email {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.close-modal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
