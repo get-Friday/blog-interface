@@ -16,9 +16,10 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['*.tsx'],
+      files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': ['off']
+        '@typescript-eslint/explicit-function-return-type': ['off'],
+        '@typescript-eslint/strict-boolean-expressions': ['off']
       }
     }
   ],

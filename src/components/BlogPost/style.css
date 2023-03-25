@@ -1,0 +1,32 @@
+.post-container {
+  position: relative;
+  background-color: var(--contrast-color);
+  color: var(--contrast-text);
+  padding: 1rem 1.5rem 2rem 1.5rem;
+}
+
+.post-container h1 {
+  /* This guarantees that the h1 will have a minimun, maximum and will be responsive to user page zoom */
+  font-size: clamp(2rem, 1.5vw + 1rem ,4rem);
+}
+
+.read-more {
+  font-weight: 600;
+  overflow-wrap: normal;
+  cursor: pointer;
+}
+
+.post-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: baseline;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.post-footer p {
+  font-size: smaller;
+  opacity: 0.8;
+}
