@@ -6,7 +6,7 @@
   background-color: var(--contrast-color);
   color: var(--contrast-text);
   padding: 50px;
-  z-index: 3;
+  z-index: 4;
   overflow-y: auto;
   max-height: calc(100vh - 210px);
   width: 50%;
@@ -19,7 +19,7 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, .7);
-  z-index: 2;
+  z-index: 3;
 }
 
 .all-comments-container {

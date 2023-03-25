@@ -28,7 +28,8 @@ body {
 }
 
 /* Z-indexes:
-  header = 1
-  overlay-shadow = 2
-  modal-container = 3
+  tooltip = 1
+  header = 2
+  overlay-shadow = 3
+  modal-container = 4
 */
