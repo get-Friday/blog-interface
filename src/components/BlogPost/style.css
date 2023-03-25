@@ -16,6 +16,27 @@
   text-overflow: ellipsis;
 }
 
+.tooltip {
+  position: relative;
+  border-bottom: 1px dotted rgba(0, 0, 0, .4);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  transition: visibility 1s ease-in-out 5s;
+}
+
+.tooltip:hover + .tooltip-text {
+  visibility: visible;
+}
+
 .read-more {
   font-weight: 600;
   overflow-wrap: normal;

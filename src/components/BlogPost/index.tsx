@@ -17,10 +17,13 @@ export function BlogPost({
   handleModalOpen,
 }: postProp) {
   const getUser = useRequest<IUser>(`${USER_URL}/${userId}`);
+  let tooltipClassName = '';
+  if (title.length > 35) tooltipClassName = 'tooltip';
 
   return (
     <div className='post-container'>
-      <h1>{title}</h1>
+      <h1 className={tooltipClassName}>{title}</h1>
+      { title.length > 35 && (<span className='tooltip-text'>{title}</span>)}
       <p>{children}</p>
       <div className='post-footer'>
         <p>
