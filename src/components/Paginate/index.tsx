@@ -15,8 +15,8 @@ export function Paginate({
   currentPage,
 }: paginateProps) {
   const pageNumbers: number[] = [];
-  const [firstPage, setFirstPage] = useState<number>(currentPage - 1);
-  const [lastPage, setLastPage] = useState<number>(currentPage + 4);
+  const [firstPage, setFirstPage] = useState<number>(0);
+  const [lastPage, setLastPage] = useState<number>(5);
 
   if (totalPosts === undefined) {
     return <div>LOADING</div>;
@@ -29,17 +29,11 @@ export function Paginate({
   function handleUpdatePages(current: number) {
     switch (current) {
       case 1:
-        setFirstPage(current - 1);
-        setLastPage(current + 4);
-        break;
       case 2:
-        setFirstPage(current - 2);
-        setLastPage(current + 3);
+        setFirstPage(0);
+        setLastPage(5);
         break;
       case pageNumbers.length:
-        setFirstPage(pageNumbers.length - 5);
-        setLastPage(pageNumbers.length);
-        break;
       case pageNumbers.length - 1:
         setFirstPage(pageNumbers.length - 5);
         setLastPage(pageNumbers.length);
