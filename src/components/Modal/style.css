@@ -55,3 +55,10 @@
   top: 5px;
   right: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+  .modal-container {
+    width: 90%;
+    padding: 5px;
+  }
+}
