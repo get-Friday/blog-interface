@@ -24,6 +24,10 @@
   background-color: var(--secondary-color);
 }
 
+.hidden {
+  display: none;
+}
+
 .page-number:hover {
   background-color: var(--secondary-color);
   color: #FFF;
