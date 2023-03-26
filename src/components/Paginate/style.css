@@ -17,11 +17,15 @@
   padding: 1rem;
   margin: 0 0.3rem;
   user-select: none;
+  -webkit-user-select: none;
 }
 
-.small {
-  padding: 4px;
-  margin: 0 8px;
+.active {
+  background-color: var(--secondary-color);
+}
+
+.hidden {
+  display: none;
 }
 
 .page-number:hover {

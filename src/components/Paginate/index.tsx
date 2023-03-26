@@ -1,13 +1,22 @@
+import { useState } from 'react';
 import './style.css';
 
 interface paginateProps {
   postPerPage: number;
   totalPosts: number | undefined;
   paginate: (pageNumber: number) => void;
+  currentPage: number;
 }
 
-export function Paginate({ postPerPage, totalPosts, paginate }: paginateProps) {
+export function Paginate({
+  postPerPage,
+  totalPosts,
+  paginate,
+  currentPage,
+}: paginateProps) {
   const pageNumbers: number[] = [];
+  const [firstPage, setFirstPage] = useState<number>(currentPage - 1);
+  const [lastPage, setLastPage] = useState<number>(currentPage + 4);
 
   if (totalPosts === undefined) {
     return <div>LOADING</div>;
@@ -17,18 +26,43 @@ export function Paginate({ postPerPage, totalPosts, paginate }: paginateProps) {
     pageNumbers.push(i);
   }
 
-  const pageNumberClass = `page-number ${
-    pageNumbers.length > 10 ? 'small' : ''
-  }`;
+  function handleUpdatePages(current: number) {
+    switch (current) {
+      case 1:
+        setFirstPage(current - 1);
+        setLastPage(current + 4);
+        break;
+      case 2:
+        setFirstPage(current - 2);
+        setLastPage(current + 3);
+        break;
+      case pageNumbers.length:
+        setFirstPage(pageNumbers.length - 5);
+        setLastPage(pageNumbers.length);
+        break;
+      case pageNumbers.length - 1:
+        setFirstPage(pageNumbers.length - 5);
+        setLastPage(pageNumbers.length);
+        break;
+      default:
+        setFirstPage(current - 3);
+        setLastPage(current + 2);
+        break;
+    }
+  }
 
   return (
     <div className='pagination-container'>
       <ul className='pagination'>
-        {pageNumbers.map((number) => (
-          <li key={number} className={pageNumberClass}>
+        {pageNumbers.slice(firstPage, lastPage).map((number) => (
+          <li
+            key={number}
+            className={`page-number ${currentPage === number ? 'active' : ''}`}
+          >
             <button
               onClick={() => {
                 paginate(number);
+                handleUpdatePages(number);
               }}
             >
               {number}
