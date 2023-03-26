@@ -6,7 +6,6 @@ interface paginateProps {
   totalPosts: number | undefined;
   paginate: (pageNumber: number) => void;
   currentPage: number;
-  handleBackKey: () => void;
 }
 
 export function Paginate({
@@ -14,12 +13,10 @@ export function Paginate({
   totalPosts,
   paginate,
   currentPage,
-  handleBackKey,
 }: paginateProps) {
   const pageNumbers: number[] = [];
   const [firstPage, setFirstPage] = useState<number>(currentPage - 1);
   const [lastPage, setLastPage] = useState<number>(currentPage + 4);
-  const displayBackKey = `page-number ${currentPage === 1 ? 'hidden' : ''}`;
 
   if (totalPosts === undefined) {
     return <div>LOADING</div>;
@@ -30,32 +27,37 @@ export function Paginate({
   }
 
   function handleUpdatePages(current: number) {
-    if (lastPage >= pageNumbers.length) return;
-
-    setFirstPage(current - 1);
-    setLastPage(current + 4);
-  }
-
-  function handleBackKeyPag() {
-    if (firstPage === 0) return;
-
-    setFirstPage((prevFirstPage) => prevFirstPage - 1);
-    setLastPage((prevLastPage) => prevLastPage - 1);
+    switch (current){
+      case 1: 
+      setFirstPage(current - 1);
+      setLastPage(current + 4);
+      break
+      case 2: 
+      setFirstPage(current - 2);
+      setLastPage(current + 3);
+      break
+      case pageNumbers.length:
+        setFirstPage(pageNumbers.length - 5);
+        setLastPage(pageNumbers.length);
+      break
+      case pageNumbers.length - 1:
+        setFirstPage(pageNumbers.length - 5);
+        setLastPage(pageNumbers.length);
+      break
+      default:
+        setFirstPage(current - 3);
+        setLastPage(current + 2);
+      break
+    }
+    console.log(current)
+    console.log(firstPage)
+    console.log(lastPage)
+    console.log(pageNumbers.length)
   }
 
   return (
     <div className='pagination-container'>
       <ul className='pagination'>
-        <li className={displayBackKey}>
-          <button
-            onClick={() => {
-              handleBackKey();
-              handleBackKeyPag();
-            }}
-          >
-            ←
-          </button>
-        </li>
         {pageNumbers.slice(firstPage, lastPage).map((number) => (
           <li
             key={number}

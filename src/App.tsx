@@ -27,12 +27,6 @@ function App() {
     indexOfLastPost,
   );
 
-  function handleBackKey() {
-    if (currentPage === 1) return;
-
-    setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
-  }
-
   function paginate(pageNumber: number) {
     setCurrentPage(pageNumber);
   }
@@ -88,7 +82,6 @@ function App() {
             totalPosts={getAllPostRequest.response?.length}
             paginate={paginate}
             currentPage={currentPage}
-            handleBackKey={handleBackKey}
           />
         </div>
       </main>
