@@ -23,7 +23,7 @@ export function BlogPost({
   return (
     <div className='post-container'>
       <h1 className={tooltipClassName}>{title}</h1>
-      { title.length > 35 && (<span className='tooltip-text'>{title}</span>)}
+      {title.length > 35 && <span className='tooltip-text'>{title}</span>}
       <p>{children}</p>
       <div className='post-footer'>
         <p>
