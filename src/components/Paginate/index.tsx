@@ -27,32 +27,32 @@ export function Paginate({
   }
 
   function handleUpdatePages(current: number) {
-    switch (current){
-      case 1: 
-      setFirstPage(current - 1);
-      setLastPage(current + 4);
-      break
-      case 2: 
-      setFirstPage(current - 2);
-      setLastPage(current + 3);
-      break
+    switch (current) {
+      case 1:
+        setFirstPage(current - 1);
+        setLastPage(current + 4);
+        break;
+      case 2:
+        setFirstPage(current - 2);
+        setLastPage(current + 3);
+        break;
       case pageNumbers.length:
         setFirstPage(pageNumbers.length - 5);
         setLastPage(pageNumbers.length);
-      break
+        break;
       case pageNumbers.length - 1:
         setFirstPage(pageNumbers.length - 5);
         setLastPage(pageNumbers.length);
-      break
+        break;
       default:
         setFirstPage(current - 3);
         setLastPage(current + 2);
-      break
+        break;
     }
-    console.log(current)
-    console.log(firstPage)
-    console.log(lastPage)
-    console.log(pageNumbers.length)
+    console.log(current);
+    console.log(firstPage);
+    console.log(lastPage);
+    console.log(pageNumbers.length);
   }
 
   return (
