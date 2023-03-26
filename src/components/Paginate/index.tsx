@@ -49,10 +49,6 @@ export function Paginate({
         setLastPage(current + 2);
         break;
     }
-    console.log(current);
-    console.log(firstPage);
-    console.log(lastPage);
-    console.log(pageNumbers.length);
   }
 
   return (
