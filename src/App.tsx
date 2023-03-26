@@ -81,6 +81,7 @@ function App() {
             postPerPage={postPerPage}
             totalPosts={getAllPostRequest.response?.length}
             paginate={paginate}
+            currentPage={currentPage}
           />
         </div>
       </main>
