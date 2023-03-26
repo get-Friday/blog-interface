@@ -4,10 +4,12 @@ interface paginateProps {
   postPerPage: number;
   totalPosts: number | undefined;
   paginate: (pageNumber: number) => void;
+  currentPage: number;
 }
 
-export function Paginate({ postPerPage, totalPosts, paginate }: paginateProps) {
+export function Paginate({ postPerPage, totalPosts, paginate, currentPage }: paginateProps) {
   const pageNumbers: number[] = [];
+  const totalpages: number = pageNumbers.length;
 
   if (totalPosts === undefined) {
     return <div>LOADING</div>;
@@ -17,15 +19,11 @@ export function Paginate({ postPerPage, totalPosts, paginate }: paginateProps) {
     pageNumbers.push(i);
   }
 
-  const pageNumberClass = `page-number ${
-    pageNumbers.length > 10 ? 'small' : ''
-  }`;
-
   return (
     <div className='pagination-container'>
       <ul className='pagination'>
         {pageNumbers.map((number) => (
-          <li key={number} className={pageNumberClass}>
+          <li key={number} className={`page-number ${currentPage === number ? 'active' : ''}`}>
             <button
               onClick={() => {
                 paginate(number);

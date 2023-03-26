@@ -20,9 +20,8 @@
   -webkit-user-select: none;
 }
 
-.small {
-  padding: 4px;
-  margin: 0 8px;
+.active {
+  background-color: var(--secondary-color);
 }
 
 .page-number:hover {
