@@ -7,7 +7,7 @@ Esse projeto foi feito para um teste técnico de vaga de emprego, a interface im
 O site está sendo hospedado no Vercel e pode ser acessado pelo seguinte link:
 
 ```
-https://blog-interface.vercel.app/
+https://blog-interface-get-friday.vercel.app/
 ```
 
 ## Recursos
