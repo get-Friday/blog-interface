@@ -4,11 +4,7 @@ Esse projeto foi feito para um teste técnico de vaga de emprego, a interface im
 
 ## Acessando o site
 
-O site está sendo hospedado no Vercel e pode ser acessado pelo seguinte link:
-
-```
-https://blog-interface-get-friday.vercel.app/
-```
+O site está sendo hospedado no Vercel e pode ser acessado [AQUI](https://blog-interface-get-friday.vercel.app/).
 
 ## Recursos
 
